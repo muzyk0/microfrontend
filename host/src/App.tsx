@@ -1,12 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {RemoteAppWithErrorBoundary} from './moduleFederation/modules';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
@@ -18,9 +16,10 @@ function App() {
         >
           Learn React
         </a>
+
+        <RemoteAppWithErrorBoundary users={[{name: 'Vlad', age: 25}]}/>
       </header>
     </div>
   );
 }
 
-export default App;
